@@ -7,15 +7,14 @@ buildscript {
         }
         mavenCentral()
     }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '6.0.11'
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
-    }
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'org.spongepowered.mixin'
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
+}
 
 version = "${minecraft_version}-${build_number}-FORGE"
 if (System.getenv().RELEASE_MODE == null) {
@@ -99,7 +98,7 @@ minecraft {
 }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:${minecraft_version}-43.1.65"
+    minecraft "net.minecraftforge:forge:${minecraft_version}-43.2.14"
     compileOnly project(":Xplat")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
