@@ -53,6 +53,7 @@ import vazkii.botania.common.helper.ItemNBTHelper;
 import vazkii.botania.common.helper.StringObfuscator;
 import vazkii.botania.common.item.BotaniaItems;
 import vazkii.botania.common.proxy.Proxy;
+import vazkii.botania.xplat.BotaniaConfig;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -488,7 +489,7 @@ public class FlugelTiaraItem extends BaubleItem {
 			RenderSystem.setShaderTexture(0, textureHud);
 			int xo = mc.getWindow().getGuiScaledWidth() / 2 + 10;
 			int x = xo;
-			int y = mc.getWindow().getGuiScaledHeight() - 49;
+			int y = mc.getWindow().getGuiScaledHeight() - BotaniaConfig.client().flightBarHeight();
 			if (player.isEyeInFluid(FluidTags.WATER)) {
 				y -= 10;
 			}

@@ -43,6 +43,7 @@ public final class ForgeBotaniaConfig {
 		public final ForgeConfigSpec.BooleanValue enableFancySkyboxInNormalWorlds;
 
 		public final ForgeConfigSpec.IntValue manaBarHeight;
+		public final ForgeConfigSpec.IntValue flightBarHeight;
 
 		public final ForgeConfigSpec.BooleanValue staticFloaters;
 		public final ForgeConfigSpec.BooleanValue debugInfo;
@@ -63,6 +64,9 @@ public final class ForgeBotaniaConfig {
 			manaBarHeight = builder
 					.comment("The height of the mana display bar in above the XP bar. You can change this if you have a mod that changes where the XP bar is.")
 					.defineInRange("manaBarHeight", 29, 0, Integer.MAX_VALUE);
+			flightBarHeight = builder
+					.comment("The height of the Flugel Tiara flight bar. You can change this if you have a mod that adds a bar in that spot.")
+					.defineInRange("flightBarHeight", 49, 0, Integer.MAX_VALUE);
 			staticFloaters = builder
 					.comment("Set this to true if you use lots of floating flowers and are experiencing rendering lag. Will disable the floating flowers' animations and render them statically for a major performance boost. Hit F3+A in-world after toggling this.")
 					.define("staticFloaters", false);
@@ -172,6 +176,11 @@ public final class ForgeBotaniaConfig {
 		@Override
 		public int manaBarHeight() {
 			return manaBarHeight.get();
+		}
+
+		@Override
+		public int flightBarHeight() {
+			return flightBarHeight.get();
 		}
 
 		@Override

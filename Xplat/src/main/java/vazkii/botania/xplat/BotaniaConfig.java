@@ -37,6 +37,7 @@ public class BotaniaConfig {
 		boolean enableFancySkybox();
 		boolean enableFancySkyboxInNormalWorlds();
 		int manaBarHeight();
+		int flightBarHeight();
 		boolean staticFloaters();
 		boolean debugInfo();
 		boolean referencesEnabled();

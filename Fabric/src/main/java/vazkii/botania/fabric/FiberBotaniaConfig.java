@@ -81,6 +81,7 @@ public final class FiberBotaniaConfig {
 		public final PropertyMirror<Boolean> enableFancySkyboxInNormalWorlds = PropertyMirror.create(BOOLEAN);
 
 		public final PropertyMirror<Integer> manaBarHeight = PropertyMirror.create(NATURAL);
+		public final PropertyMirror<Integer> flightBarHeight = PropertyMirror.create(NATURAL);
 
 		public final PropertyMirror<Boolean> staticFloaters = PropertyMirror.create(BOOLEAN);
 		public final PropertyMirror<Boolean> debugInfo = PropertyMirror.create(BOOLEAN);
@@ -105,6 +106,10 @@ public final class FiberBotaniaConfig {
 					.beginValue("manaBarHeight", NATURAL, 29)
 					.withComment("The height of the mana display bar in above the XP bar. You can change this if you have a mod that changes where the XP bar is.")
 					.finishValue(manaBarHeight::mirror)
+
+					.beginValue("flightBarHeight", NATURAL, 49)
+					.withComment("The height of the Flugel Tiara flight bar. You can change this if you have a mod that adds a bar in that spot.")
+					.finishValue(flightBarHeight::mirror)
 
 					.beginValue("staticFloaters", BOOLEAN, false)
 					.withComment("Set this to true if you use lots of floating flowers and are experiencing rendering lag. Will disable the floating flowers' animations and render them statically for a major performance boost. Hit F3+A in-world after toggling this.")
@@ -226,6 +231,11 @@ public final class FiberBotaniaConfig {
 		@Override
 		public int manaBarHeight() {
 			return manaBarHeight.getValue();
+		}
+
+		@Override
+		public int flightBarHeight() {
+			return flightBarHeight.getValue();
 		}
 
 		@Override
